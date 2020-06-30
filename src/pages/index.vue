@@ -1,19 +1,29 @@
 <template>
   <div>
-    <svg class="icon" aria-hidden="true">
-      <use xlink:href="#icon-data"></use>
-    </svg>
+    <Info></Info>
+    <Top></Top>
   </div>
 </template>
 <script>
+import Info from '../components/Info.vue'
+import Top from '../components/Top.vue'
+import '../assets/css/index.css'
 export default {
-  name: 'index'
+  name: 'index',
+  //钩子函数
+  mounted () {
+
+  },
+  //计算属性
+  computed: {
+  },
+  //组件
+  components: {
+    Info,
+    Top
+  },
+  methods: {
+
+  }
 }
 </script>
-<style>
-.icon {
-  display: block;
-  width: 24px;
-  height: 24px;
-}
-</style>
