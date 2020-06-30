@@ -1,0 +1,34 @@
+[
+  {
+    "icon": "home",
+    "name": "首页"
+  },
+  {
+    "icon": "pcm",
+    "name": "实时监控"
+  },
+  {
+    "icon": "data",
+    "name": "数据分析"
+  },
+  {
+    "icon": "lights",
+    "name": "异常管理"
+  },
+  {
+    "icon": "inspection",
+    "name": "项目管理"
+  },
+  {
+    "icon": "all",
+    "name": "综合服务"
+  },
+  {
+    "icon": "inquiry-template",
+    "name": "财务管理"
+  },
+  {
+    "icon": "security",
+    "name": "资质认证"
+  }
+]

@@ -6,7 +6,7 @@ import VueAxios from 'vue-axios'
 //图标样式
 import './assets/icon/iconfont.js'
 Vue.config.productionTip = false
-Vue.use(axios, VueAxios)
+Vue.use(VueAxios,axios)
 new Vue({
   router: Router,
   render: (h) => h(App),

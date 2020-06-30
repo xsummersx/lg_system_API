@@ -1,0 +1,57 @@
+.infoBox {
+  width: 300px;
+  height: 100%;
+  border-right: 1px solid #e3e3e5;
+  background: #fff;
+}
+ul,
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+h2 {
+  font-size: 32px;
+  text-align: center;
+  height: 60px;
+  line-height: 60px;
+  color: #6b5af4;
+}
+h3 {
+  font-size: 12px;
+  text-align: center;
+  height: 28px;
+  line-height: 28px;
+  color: #666;
+  font-weight: normal;
+}
+.navBox {
+  text-align: center;
+  width: 230px;
+  height: 72px;
+  line-height: 72px;
+  padding-left: 70px;
+}
+.navBox:hover {
+  background: #f1f3f7;
+  cursor: pointer;
+}
+.text {
+  color: #666;
+  float: left;
+  margin-left: 34px;
+}
+.icon {
+  width: 28px;
+  height: 28px;
+  color: #666;
+  float: left;
+  margin-top: 24px;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+}
+.navBox:hover .icon,
+.navBox:hover .text {
+  color: #6b5af4;
+}
