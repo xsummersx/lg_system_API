@@ -1,0 +1,86 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "11474277",
+      "name": "data",
+      "font_class": "data",
+      "unicode": "e6f9",
+      "unicode_decimal": 59129
+    },
+    {
+      "icon_id": "11487981",
+      "name": "all",
+      "font_class": "all",
+      "unicode": "e743",
+      "unicode_decimal": 59203
+    },
+    {
+      "icon_id": "11487994",
+      "name": "calendar",
+      "font_class": "calendar",
+      "unicode": "e746",
+      "unicode_decimal": 59206
+    },
+    {
+      "icon_id": "11488059",
+      "name": "inspection",
+      "font_class": "inspection",
+      "unicode": "e754",
+      "unicode_decimal": 59220
+    },
+    {
+      "icon_id": "11488066",
+      "name": "inquiry-template",
+      "font_class": "inquiry-template",
+      "unicode": "e755",
+      "unicode_decimal": 59221
+    },
+    {
+      "icon_id": "11488071",
+      "name": "lights",
+      "font_class": "lights",
+      "unicode": "e756",
+      "unicode_decimal": 59222
+    },
+    {
+      "icon_id": "11488121",
+      "name": "security",
+      "font_class": "security",
+      "unicode": "e762",
+      "unicode_decimal": 59234
+    },
+    {
+      "icon_id": "11488158",
+      "name": "view larger",
+      "font_class": "viewlarger",
+      "unicode": "e76c",
+      "unicode_decimal": 59244
+    },
+    {
+      "icon_id": "11488171",
+      "name": "tool-hardware",
+      "font_class": "tool-hardware",
+      "unicode": "e76e",
+      "unicode_decimal": 59246
+    },
+    {
+      "icon_id": "11674090",
+      "name": "home",
+      "font_class": "home",
+      "unicode": "e7a7",
+      "unicode_decimal": 59303
+    },
+    {
+      "icon_id": "13087877",
+      "name": "pcm",
+      "font_class": "pcm",
+      "unicode": "e7d0",
+      "unicode_decimal": 59344
+    }
+  ]
+}
