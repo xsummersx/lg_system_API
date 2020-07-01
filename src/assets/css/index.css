@@ -3,3 +3,13 @@
   width: 24px;
   height: 24px;
 }
+body {
+  margin: 0px;
+  padding: 0px;
+  border: white solid 1px;
+}
+.indexBox {
+  background: #f8fafb;
+  float: right;
+  width: calc(100% - 301px);
+}
