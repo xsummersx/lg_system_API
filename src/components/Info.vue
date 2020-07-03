@@ -5,7 +5,7 @@
         <h5>接口系统</h5>
         <el-menu default-active="2" class="el-menu-vertical-demo">
           <el-menu-item v-bind:index="item.ID" v-for=" (item,itemIndex) in InfoList" :key="itemIndex"
-            @click="click(item.ID)" v-bind:class="{'is-active':one == itemIndex}">
+            @click="click(item.ID,itemIndex)" v-bind:class="{'is-active':isActive == itemIndex}">
             <i v-bind:class="item.icon"></i>
             <span>{{item.name}}</span>
           </el-menu-item>
@@ -19,13 +19,13 @@ import '../assets/css/components/info.css'
 export default {
   name: 'Info',
   props: {
-    'one': String
   },
   data () {
     return {
       height: {
         height: ''
       },
+      isActive: '0',
       InfoList: []
     }
   },
@@ -49,8 +49,9 @@ export default {
       console.log(key, keyPath);
     },
     //点击事件
-    click (id) {
-      this.router.put({
+    click (id, index) {
+      this.isActive = index
+      this.$router.push({
         "path": '/' + id
       })
     }

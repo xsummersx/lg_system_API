@@ -1,16 +1,14 @@
 <template>
   <div>
-    <Info class="infoBox" v-bind:one="pageOne"></Info>
     <div class="indexBox" v-bind:style="height">
-      <Top></Top>
+
       main
     </div>
   </div>
 </template>
 <script>
-import Info from '../components/Info.vue'
-import Top from '../components/Top.vue'
-import '../assets/css/index.css'
+
+import '../assets/css/global.css'
 export default {
   name: 'index',
   data () {
@@ -30,8 +28,6 @@ export default {
   },
   //组件
   components: {
-    Info,
-    Top
   },
   methods: {
     init () {

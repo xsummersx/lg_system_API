@@ -1,14 +1,20 @@
 <template>
   <div>
-    123
+    <div class="indexBox" v-bind:style="height">
+      interface
+    </div>
   </div>
 </template>
 <script>
+import '../assets/css/global.css'
 export default {
   name: 'interface',
   data () {
     return {
-
+      pageOne: '1',//导航页面
+      height: {
+        height: ''
+      }
     }
   },
   //计算函数
@@ -17,7 +23,6 @@ export default {
   },
   //组件
   components: {
-
   },
   //钩子函数
   mounted () {
@@ -25,8 +30,9 @@ export default {
   },
   methods: {
     init () {
-      alert("123")
-    }
+      let h = window.innerHeight - 5 + 'px';
+      this.height.height = h;
+    },
   }
 }
 </script>

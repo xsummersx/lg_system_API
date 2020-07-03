@@ -6,14 +6,14 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
-      path: '/index',
+      path: '/page01',
       name: 'index',
       component: Index,
     },
     {
-      path:'/interface',
+      path:'/page02',
       name:'interface',
-      conponent:Interface
+      component:Interface,
     }
   ],
 })
