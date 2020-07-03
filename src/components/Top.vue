@@ -15,8 +15,9 @@ export default {
   },
   data () {
     return {
-      week: '',
-      timeStr: ''
+      week: '',//星期
+      timeStr: '',//时间
+      isCollapse: true,//展开收拢
     }
   },
   mounted () {
@@ -32,6 +33,12 @@ export default {
       let dd = String(myDate.getDate() < 10 ? '0' + myDate.getDate() : myDate.getDate())
       this.timeStr = yy + '-' + mm + '-' + dd;
     },
+    handleOpen (key, keyPath) {
+      console.log(key, keyPath);
+    },
+    handleClose (key, keyPath) {
+      console.log(key, keyPath);
+    }
   }
 }
 </script>
@@ -45,7 +52,7 @@ export default {
 .topicon {
   width: 28px;
   height: 28px;
-  color: #666;
+  color: #409eff;
   float: left;
   margin-top: 30px;
   fill: currentColor;
@@ -55,6 +62,11 @@ export default {
 .time {
   line-height: 88px;
   margin-left: 15px;
-  color: #6b5af4;
+  color: #409eff;
+}
+.btnOpen {
+  float: left;
+  margin-top: 24px;
+  margin-left: 24px;
 }
 </style>

@@ -11,5 +11,9 @@ body {
 .indexBox {
   background: #f8fafb;
   float: right;
-  width: calc(100% - 301px);
+  width: calc(100% - 151px);
+}
+.infoBox {
+  width: 150px;
+  float: left;
 }
