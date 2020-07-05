@@ -16,7 +16,6 @@ export default {
       height: {
         height: ''
       },
-      pageOne: '0'
     }
   },
   //钩子函数
