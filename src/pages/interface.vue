@@ -20,7 +20,8 @@
           <el-tag type="info" class="text-info-sub">作用：接口用于获取试卷详情信息接口用于获取试卷详情信息接口用于获取试卷详情信息接口用于获取试卷详情信息</el-tag>
           <el-divider class="line" content-position="left">a.输入</el-divider>
           <template>
-            <el-table :data="tableData" border stripe style="width: 100%">
+            <el-table :data="tableData" border stripe style="width: 100%" row-key="name" default-expand-all
+              :tree-props="{children: 'children', hasChildren: 'hasChildren'}">
               <el-table-column prop="name" label="参数" width="200">
               </el-table-column>
               <el-table-column prop="bak" label="备注">
@@ -95,7 +96,13 @@ export default {
         name: 'className',
         bak: '班级名称',
         type: 'Boolean',
-        isNull: '否'
+        isNull: '否',
+        children: [{
+          name: 'stNmae',
+          bak: '包含关系',
+          type: 'Boolean',
+          isNull: '否',
+        }]
       }],
       //接口报错
       errorData: [{

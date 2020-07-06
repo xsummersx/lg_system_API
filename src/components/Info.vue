@@ -26,7 +26,8 @@ export default {
         height: ''
       },
       isActive: '0',
-      InfoList: []
+      InfoList: [],
+      Data: '[{"ID": "page01","icon": "el-icon-s-home","name": "首页"},{"ID": "page02","icon": "el-icon-menu","name": "共享接口"},{"ID": "page03","name": "接口录入","icon": "el-icon-setting"}]'
     }
   },
   mounted () {
@@ -36,11 +37,7 @@ export default {
     init () {
       let h = window.innerHeight - 5 + 'px';
       this.height.height = h;
-      this.axios.get("/json/InfoList.json").then((response) => {
-        let res = response.data;
-        console.log(res)
-        this.InfoList = res;
-      })
+      this.InfoList = JSON.parse(this.Data);
     },
     handleOpen (key, keyPath) {
       console.log(key, keyPath);
@@ -51,9 +48,16 @@ export default {
     //点击事件
     click (id, index) {
       this.isActive = index
-      this.$router.push({
-        "path": '/' + id
-      })
+      if (index == 0) {
+        this.$router.push({
+          "path": '/'
+        })
+      } else {
+        this.$router.push({
+          "path": '/' + id
+        })
+      }
+
     }
   }
 }
