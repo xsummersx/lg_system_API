@@ -48,9 +48,9 @@
             <div>
               <el-table :data="outputData" style="width: 100%;margin-bottom: 20px;" row-key="parameter" border
                 default-expand-all :tree-props="{children: 'children', hasChildren: 'hasChildren'}">
-                <el-table-column prop="parameter" label="接口" width="200">
+                <el-table-column prop="parameter" label="参数" width="200">
                 </el-table-column>
-                <el-table-column prop="description" label=" 参数">
+                <el-table-column prop="description" label="描述">
                 </el-table-column>
               </el-table>
             </div>
