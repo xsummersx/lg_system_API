@@ -35,7 +35,7 @@
         <el-form-item label="报错录入">
           <el-button type="primary" style="margin-bottom:10px" @click="addParms(2)">增加报错信息</el-button>
           <template>
-            <el-table :data="errorData" border stripe style="width: 100%" row-key="name" default-expand-all
+            <el-table :data="errorData" border stripe style="width: 100%" row-key="code" default-expand-all
               :tree-props="{children: 'children', hasChildren: 'hasChildren'}">
               <el-table-column prop="code" label="code" width="200">
               </el-table-column>
@@ -47,7 +47,7 @@
         <el-form-item label="返回成功">
           <el-button type="primary" style="margin-bottom:10px" @click="addParms(3)">增加返回数据结构</el-button>
           <template>
-            <el-table :data="successData" border stripe style="width: 100%" row-key="name" default-expand-all
+            <el-table :data="successData" border stripe style="width: 100%" row-key="code" default-expand-all
               :tree-props="{children: 'children', hasChildren: 'hasChildren'}">
               <el-table-column prop="code" label="参数" width="200">
               </el-table-column>
@@ -111,17 +111,15 @@
       <template v-slot:addParams>
         <el-form class="form" ref="form" :model="paramsSuccess" label-width="90px">
           <el-form-item label="code">
-            <el-input v-model="paramsSuccess.code" type="number"></el-input>
+            <el-input v-model="paramsSuccess.code"></el-input>
           </el-form-item>
           <el-form-item label="msg">
             <el-input v-model="paramsSuccess.msg"></el-input>
           </el-form-item>
           <el-form-item label="父节点">
-            <el-select v-model="params.type" placeholder="选择父节点">
-              <el-option label="String" value="String"></el-option>
-              <el-option label="Int" value="Int"></el-option>
-              <el-option label="Float" value="Float"></el-option>
-              <el-option label="Boolean" value="Boolean"></el-option>
+            <el-select v-model="DataType" placeholder="选择父节点-默认为根节点">
+              <el-option v-bind:label="op" v-for="(op,index) in successOption" :key="index" v-bind:value="op">
+              </el-option>
             </el-select>
           </el-form-item>
         </el-form>
@@ -169,6 +167,8 @@ export default {
         msg: '',
         children: []
       },
+      //当前录入数据节点
+      DataType: '',
       //参数表格
       csData: [
 
@@ -194,17 +194,17 @@ export default {
       let h = window.innerHeight - 95 + 'px';
       this.height.height = h;
     },
-    //录入a参数弹框显示
+    //录入c返回数据的参数
     addParms (n) {
       if (n == 3) {
         this.successData.map((item) => {
           this.successOption.push(item.code);
           this.isChildrenLength(item.children);//判断当前是否还有子集
         })
-        console.log(this.successOption)
       }
       this.modalShow = n;
     },
+    //
     isChildrenLength (child) {
       if (child.length > 0) {
         child.map((item) => {
@@ -253,12 +253,47 @@ export default {
         })
       } else {
         this.errorData.push(JSON.parse(JSON.stringify(this.paramsError)));
+        //重置数据
+        this.paramsError.code = '',
+          this.paramsError.msg = ''
         this.closeModal();
+
       }
     },
+    //成功数据饿录入
     sureParamsSuccess () {
-      this.successData.push(JSON.parse(JSON.stringify(this.paramsSuccess)));
-      this.closeModal();
+      if (this.DataType == '') {
+        this.successData.push(JSON.parse(JSON.stringify(this.paramsSuccess)));
+      } else {
+        this.successData.map((item) => {
+          if (item.code == this.DataType) {
+            item.children.push(JSON.parse(JSON.stringify(this.paramsSuccess)));
+          } else {
+            if (item.children.length > 0) {
+              this.isChildFn(item.children)
+            }
+          }
+        })
+      }
+      //重置Object参数
+      this.paramsSuccess.code = '',
+        this.paramsSuccess.msg = '',
+        this.paramsSuccess.children = [],
+        this.DataType = '',
+        this.closeModal();
+      this.successOption = [];//重置列表
+      console.log(this.successData)
+    },
+    isChildFn (list) {
+      list.map((item) => {
+        if (item.code == this.DataType) {
+          item.children.push(JSON.parse(JSON.stringify(this.paramsSuccess)));
+        } else {
+          if (item.children.length > 0) {
+            this.isChildFn(item.children)
+          }
+        }
+      })
     }
   }
 }
