@@ -58,8 +58,10 @@
           <el-divider class="line" content-position="left">c.测试</el-divider>
           <el-tag type="default">测试URL：</el-tag>
           <div class="url">
-            http://60.190.136.238:20103/Web_ZSP_DCS/api/share/GetRzOriginData_A00?Token=73fd7fef550517630996697579bb8828&SchoolID=&SubjectID=&EventType=&BeginTime=&EndTime=
+            url：<span>http://60.190.136.238:20103/Web_ZSP_DCS/api/share/GetRzOriginData_A00</span><br />
+            参数：<span>Token=73fd7fef550517630996697579bb8828&SchoolID=&SubjectID=&EventType=&BeginTime=&EndTime=</span>
           </div>
+
           <el-form class="form" ref="form" :model="form" label-width="80px">
             <el-form-item v-for="(item,itemIndex) in form.list" :key="itemIndex" v-bind:label="item.ID">
               <el-input v-model="item.Input"></el-input>

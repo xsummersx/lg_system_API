@@ -14,6 +14,12 @@
         <el-form-item label="接口描述">
           <el-input v-model="form.bak"></el-input>
         </el-form-item>
+        <el-form-item label="接口测试">
+          <el-input v-model="form.test"></el-input>
+        </el-form-item>
+        <el-form-item label="测试参数">
+          <el-input v-model="form.pars" type="textarea"></el-input>
+        </el-form-item>
         <el-divider class="line" content-position="left">a.输入</el-divider>
         <el-form-item label="参数录入">
           <el-button type="primary" style="margin-bottom:10px" @click="addParms(1)">增加参数</el-button>
@@ -45,7 +51,7 @@
           </template>
         </el-form-item>
         <el-form-item label="返回成功">
-          <el-button type="primary" style="margin-bottom:10px" @click="addParms(3)">增加返回数据结构</el-button>
+
           <template>
             <el-table :data="successData" border stripe style="width: 100%" row-key="code" default-expand-all
               :tree-props="{children: 'children', hasChildren: 'hasChildren'}">
@@ -57,6 +63,7 @@
           </template>
         </el-form-item>
       </el-form>
+      <el-button type="success" style="margin:10px 10%;float:right" @click="submitData">确认录入的接口信息</el-button>
     </div>
     <!-- 参数录入 -->
     <Modal class="modal" v-on:close="closeModal" v-if="modalShow == 1">
@@ -148,6 +155,8 @@ export default {
         type: 'get',
         name: '',
         bak: '',
+        test: '',
+        pars: ''
       },
       //a录入参数
       params: {
@@ -294,6 +303,12 @@ export default {
           }
         }
       })
+    },
+    //确认接口录入的数据
+    submitData () {
+      //调用API接口
+      //this.axios.get('').then(()=>{})
+
     }
   }
 }
